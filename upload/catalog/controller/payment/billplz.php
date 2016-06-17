@@ -77,7 +77,7 @@ class ControllerPaymentBillplz extends Controller
 		$return = curl_exec($process);
 		curl_close($process);
 		$arr         = json_decode($return, true);
-		$data['url'] = $arr['url'];
+		$data['url'] = isset($arr['url']) ? $arr['url'] : '#';
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/billplz.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/payment/billplz.tpl', $data);
 		} else {
