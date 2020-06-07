@@ -17,7 +17,7 @@ class ControllerPaymentBillplz extends Controller
             'action' => $this->url->link('payment/billplz/proceed', '', true)
         );
 
-        return $this->load->view('payment/billplz', $data);
+        return $this->load->view('default/template/payment/billplz.tpl', $data);
     }
 
     public function proceed()
